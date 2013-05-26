@@ -1,0 +1,34 @@
+# This is a grammar file. In this top section you can put different tweets, one per line.
+# When the tweet is generated, a line will be chosen at random. Empty lines, and lines
+# that start with a hash, are ignored. Within a line you can put a "node" in {curly
+# braces}.
+
+{omygod} here's {daphne}. {statement of excitement}.
+She looks so {good adjective} and stuff!
+
+# Sections in [square brackets] are "nodes". The same rules apply - you can put several
+# lines here and one will be chosen at random. Nodes can themselves refer to other nodes
+
+[omygod]
+
+Gotta compose myself
+Omygodomygod
+Hooray
+
+[daphne]
+
+Daphne
+my heroine
+the light of my life
+
+[statement of excitement] 
+
+My day just got better
+I could die happy right now
+*swoon*
+
+[good adjective]
+
+very {good adjective}
+feline
+elegant
