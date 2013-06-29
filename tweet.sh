@@ -13,5 +13,5 @@ curl -v \
     -F "oauth_secret=HD1w0jh2x2nxAcgPI6Cux1SKbxI0VxaQYHvNZn8dGxQ" \
     -F "message=$1" \
     -F "key=a850e635a4d29d2f5b945b9f3fe01062" \
-    -F "media=@$2" \
+    -F "media=@capture.jpg" \
     http://api.twitpic.com/1/uploadAndPost.json
