@@ -6,6 +6,7 @@
 # "sudo easy_install twitter" then "twitter set foo". You'll be led through the OAuth
 # dance. When you're authenticated, copy the first two lines from ~/twitter_oauth
 
+
 curl -v \
     -F "consumer_token=uS6hO2sV6tDKIOeVjhnFnQ" \
     -F "consumer_secret=MEYTOS97VvlHX7K1rwHPEqVpTSqZ71HtvoK4sVuYk" \

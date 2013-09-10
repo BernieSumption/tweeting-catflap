@@ -1,0 +1,48 @@
+
+* About to connect() to api.twitpic.com port 80 (#0)
+*   Trying 173.236.110.98...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* connected
+* Connected to api.twitpic.com (173.236.110.98) port 80 (#0)
+> POST /1/uploadAndPost.json HTTP/1.1
+> User-Agent: curl/7.26.0
+> Host: api.twitpic.com
+> Accept: */*
+> Content-Length: 40205
+> Expect: 100-continue
+> Content-Type: multipart/form-data; boundary=----------------------------d64a3df1ec55
+> 
+* additional stuff not fine transfer.c:1037: 0 0
+* HTTP 1.1 or later with persistent connection, pipelining supported
+< HTTP/1.1 100 Continue
+  0 40205    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* additional stuff not fine transfer.c:1037: 0 0
+} [data not shown]
+* additional stuff not fine transfer.c:1037: 0 0
+} [data not shown]
+* additional stuff not fine transfer.c:1037: 0 0
+} [data not shown]
+* additional stuff not fine transfer.c:1037: 0 0
+} [data not shown]
+* additional stuff not fine transfer.c:1037: 0 0
+} [data not shown]
+* additional stuff not fine transfer.c:1037: 0 0
+} [data not shown]
+* additional stuff not fine transfer.c:1037: 0 0
+} [data not shown]
+* additional stuff not fine transfer.c:1037: 0 0
+* additional stuff not fine transfer.c:1037: 0 0
+100 40205    0     0  100 40205      0  25538  0:00:01  0:00:01 --:--:-- 28373* HTTP 1.1 or later with persistent connection, pipelining supported
+< HTTP/1.1 200 OK
+< Server: nginx/1.4.2
+< Date: Tue, 10 Sep 2013 19:05:58 GMT
+< Content-Type: application/json
+< Transfer-Encoding: chunked
+< Connection: keep-alive
+< X-Powered-By: PHP/5.5.3-1~dotdeb.1
+< X-Upstream-Host: app06.twitpic.com
+< 
+{ [data not shown]
+100 40465    0   260  100 40205    124  19260  0:00:02  0:00:02 --:--:-- 20831
+* Connection #0 to host api.twitpic.com left intact
+{"id":"dcwgb3","text":"She looks so feline and stuff!","url":"http:\/\/twitpic.com\/dcwgb3","width":320,"height":240,"size":39201,"type":"jpg","timestamp":"Tue, 10 Sep 2013 19:06:03 +0000","user":{"id":1334844578,"screen_name":"BernieTestAccnt"},"status":null}* Closing connection #0
