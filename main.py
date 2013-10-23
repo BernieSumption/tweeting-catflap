@@ -4,7 +4,7 @@ from gpio_watcher import GPIOWatcher
 from subprocess import call
 from datetime import datetime
 from grammar import Grammar
-import os
+import os, shutil
 
 from twython import Twython
 import sys
@@ -29,13 +29,13 @@ def goGoPaparazzo():
     message = grammar.generate()
 
     # post to twitter
-	twitter = Twython(
-		app_key = 'uS6hO2sV6tDKIOeVjhnFnQ',
-		app_secret = 'MEYTOS97VvlHX7K1rwHPEqVpTSqZ71HtvoK4sVuYk',
-		oauth_token = '1334844578-z3Ju3FUAQKZKogQnK7kbqngeeSQxX1wkeGwRiey',
-		oauth_token_secret = 'HD1w0jh2x2nxAcgPI6Cux1SKbxI0VxaQYHvNZn8dGxQ'
-	)
-	twitter.update_status_with_media(status=message, media=open("capture.jpg", 'rb'))
+    twitter = Twython(
+        app_key = 'uS6hO2sV6tDKIOeVjhnFnQ',
+        app_secret = 'MEYTOS97VvlHX7K1rwHPEqVpTSqZ71HtvoK4sVuYk',
+        oauth_token = '1334844578-z3Ju3FUAQKZKogQnK7kbqngeeSQxX1wkeGwRiey',
+        oauth_token_secret = 'HD1w0jh2x2nxAcgPI6Cux1SKbxI0VxaQYHvNZn8dGxQ'
+    )
+    twitter.update_status_with_media(status=message, media=open("capture.jpg", 'rb'))
 
     # archive the image and text
     shutil.move("capture.jpg", "history/%s.jpg" % timestamp)
