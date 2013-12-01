@@ -22,9 +22,13 @@ except ImportError:
 
 def goGoPaparazzo():
     
-    # time to archive the image and text
     # get a pretty date time string 
     timestamp = datetime.now().strftime("%Y-%m-%d--%H-%M-%S")
+
+    hour = datetime.now().hour
+    if hour < 9 or hour > 15:
+        print "Yawn, I'm asleep. Wake me up when it's daytime"
+        return
     
     print "Activating Paparazzo at", timestamp
     
