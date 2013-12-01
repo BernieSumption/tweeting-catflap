@@ -3,7 +3,7 @@
 from subprocess import call
 from datetime import datetime
 from grammar import Grammar
-import os
+import os, shutil
 
 from twython import Twython
 import sys
@@ -57,6 +57,7 @@ def goGoPaparazzo():
     with open("history/%s.txt" % timestamp, "w") as f:
         f.write("%s\n" % message)
     
+
 
 if __name__ == "__main__":
     if "--test" in sys.argv:
