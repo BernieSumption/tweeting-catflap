@@ -1,0 +1,199 @@
+# This is a grammar file. In this top section you can put different tweets, one per line.
+# When the tweet is generated, a line will be chosen at random. Empty lines, and lines
+# that start with a hash, are ignored. Within a line you can put a "node" in {curly
+# braces}.
+
+{opening}, {description}. {conclusion}.
+
+# Sections in [square brackets] are "nodes". The same rules apply - you can put several
+# lines here and one will be chosen at random. Nodes can themselves refer to other nodes
+
+[opening]
+
+{Here comes} the {good adjective} Daphne
+Oh Daphne, {possessive}
+Daphne, the {superlative} and most {good adjective} {cat}
+{Beloved} Daphne, {good adjective} {cat}
+{Exclamation} It’s Daphne
+{Beloved} Daphne
+Most {good adjective} Daphne
+ 
+[description]
+
+{of the} {good adverb} pointed ears
+how {good adverb} tuned whiskers
+{of the} glittering emerald eyes
+{of the} {good adverb} padded feet
+{of the} soft is your {good adjective} {fwuff}
+your nose is so pink and moist
+{of the} nobly held, {good adjective} tail
+there is no bushier, more lustrously {good adjective} tail
+{how} noble is your imperial demeanour
+{how} lustrous is your glossy coat
+ 
+[conclusion]
+I can {die} {happy}
+Will she {ignore me} again or will she {see me}?
+It is {my pleasure} to {open for you}
+How it {thrills} me to have you {pass through me}
+My {time period} could not be {better}
+Could my {time period} be {better}?
+No {catflap} {could be} {luckier} than me
+{Ohmygosh}
+
+
+[good adjective]
+exquisite
+ineffable
+imperial
+amazing
+wonderful
+elegant
+pretty
+magnificent
+
+[good adverb]
+exquisitely
+ineffably
+imperially
+amazingly
+wonderfully
+elegantly
+prettily
+magnificently
+
+[fwuff]
+fwuff
+fur
+fluff
+coat
+
+[of the]
+of the
+with your
+all
+such
+{how}
+
+[how]
+how
+so
+
+[superlative]
+fluffiest
+
+[possessive]
+my delight
+my muse
+my sun and stars
+heart of my heart
+light of my life
+
+[exclamation]
+oh my!
+praise be!
+gasp!
+hooray!
+
+[beloved]
+adored
+beloved
+cherished
+
+
+[endless]
+endless
+eternal
+lifelong
+perpetual
+unreserved
+
+[catflap]
+catflap
+mechanical device
+wall-mounted fixture
+pet accessory
+
+[ignore me]
+ignore me
+slink past
+be aloof
+
+[see me]
+acknowledge me
+grace me with a {cat noise}
+
+[cat noise]
+purr
+meow
+
+[open for you]
+open for you
+let you past
+provide access
+be of service
+
+[could be]
+could be
+is
+could possibly be
+
+[my pleasure]
+my pleasure
+so delightful
+an {endless} delight
+
+[ohmygosh]
+ohmygosh
+{ohmygosh}ohmygosh
+
+[cat]
+feline
+fluffball
+cat
+
+[time period]
+life
+day
+week
+
+[better]
+more complete
+better
+improved
+
+[thrills]
+thrills
+delights
+contents
+satisfies
+gladdens
+enraptures
+gratifies
+beguiles
+charms
+
+[pass through me]
+pass through me
+brush against me
+slink around me
+glide through
+
+[die]
+die
+expire
+
+[happy]
+happy
+content
+without regrets
+
+[luckier]
+luckier
+more fortunate
+better off
+
+[here comes]
+here comes
+here's
+so arrives

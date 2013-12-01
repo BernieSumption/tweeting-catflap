@@ -1,6 +1,5 @@
 
 
-from gpio_watcher import GPIOWatcher
 from subprocess import call
 from datetime import datetime
 from grammar import Grammar
@@ -8,6 +7,18 @@ import os
 
 from twython import Twython
 import sys
+
+try:
+    import settings
+except ImportError:
+    print "Could not import settings module, did you create one?"
+    exit()
+
+try:
+    from gpio_watcher import GPIOWatcher
+except ImportError:
+    print "Import GPIOWatcher failed, the script will only work in test mode"
+
 
 def goGoPaparazzo():
     
@@ -17,6 +28,13 @@ def goGoPaparazzo():
     
     print "Activating Paparazzo at", timestamp
     
+    grammar = Grammar.from_file("grammar.txt")
+    while True:
+        message = grammar.generate()
+        if len(message) < 140:
+            break
+    print "Message:", message
+    
     # capture image to capture.jpg
     call(["./capture-image.sh"], shell=True)
     
@@ -24,18 +42,15 @@ def goGoPaparazzo():
     if not os.path.exists("capture.jpg"):
         print "Error - no capture.jpg recorded"
         return
-    
-    grammar = Grammar.from_file("demo-grammar.txt")
-    message = grammar.generate()
 
     # post to twitter
-	twitter = Twython(
-		app_key = 'uS6hO2sV6tDKIOeVjhnFnQ',
-		app_secret = 'MEYTOS97VvlHX7K1rwHPEqVpTSqZ71HtvoK4sVuYk',
-		oauth_token = '1334844578-z3Ju3FUAQKZKogQnK7kbqngeeSQxX1wkeGwRiey',
-		oauth_token_secret = 'HD1w0jh2x2nxAcgPI6Cux1SKbxI0VxaQYHvNZn8dGxQ'
-	)
-	twitter.update_status_with_media(status=message, media=open("capture.jpg", 'rb'))
+    twitter = Twython(
+        app_key = settings.app_key,
+        app_secret = settings.app_secret,
+        oauth_token = settings.oauth_token,
+        oauth_token_secret = settings.oauth_token_secret
+    )
+    twitter.update_status_with_media(status=message, media=open("capture.jpg", 'rb'))
 
     # archive the image and text
     shutil.move("capture.jpg", "history/%s.jpg" % timestamp)
@@ -43,9 +58,13 @@ def goGoPaparazzo():
         f.write("%s\n" % message)
     
 
-watcher = GPIOWatcher(7, onChange=goGoPaparazzo, debounceSeconds=20)
-while True:
-    try:
-        watcher.enter_loop()
-    except Exception as e:
-        print "Error:", e
+if __name__ == "__main__":
+    if "--test" in sys.argv:
+        goGoPaparazzo()
+    else:
+        watcher = GPIOWatcher(7, onChange=goGoPaparazzo, debounceSeconds=20)
+        while True:
+            try:
+                watcher.enter_loop()
+            except Exception as e:
+                print "Error:", e

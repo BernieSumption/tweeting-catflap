@@ -21,8 +21,13 @@ class Grammar(object):
         return self.expand_node("__root__")
     
     def expand_node(self, node):
+        capitalise = node[0].isupper()
+        node = node.lower()
         option = random.choice(self.nodes[node])
-        return self.expand_option(option)
+        result = self.expand_option(option)
+        if capitalise:
+            result = result[0].upper() + result[1:]
+        return result
     
     def expand_option(self, option):
         result = option;
@@ -32,7 +37,7 @@ class Grammar(object):
             if end == -1:
                 die("on line %s the '{' at column %s has no matching '}': %s" % (self._lines.index(option)+1, start, option))
             node = result[start+1:end]
-            if not node in self.nodes:
+            if not node.lower() in self.nodes:
                 die("on line %s the node {%s} does not exist or has no options: %s" % (self._lines.index(option)+1, node, option))
             result = result[:start] + self.expand_node(node) + result[end+1:]
         return result
@@ -57,7 +62,7 @@ class Grammar(object):
             if line[0] == "[" and line[-1] == "]":
                 node = line[1:-1]
             else:
-                grammar.add_node_option(node, line)
+                grammar.add_node_option(node.lower(), line)
         grammar.validate()
         return grammar
 
