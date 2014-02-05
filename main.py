@@ -26,7 +26,7 @@ def goGoPaparazzo():
     timestamp = datetime.now().strftime("%Y-%m-%d--%H-%M-%S")
 
     hour = datetime.now().hour
-    if hour < 9 or hour > 15:
+    if hour < 8 or hour > 17:
         print "Yawn, I'm asleep. Wake me up when it's daytime"
         return
     

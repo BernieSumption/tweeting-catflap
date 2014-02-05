@@ -3,3 +3,4 @@ capture.jpg
 history
 .pyc
 settings.py
+.DS_Store
