@@ -4,4 +4,4 @@ resolution 320x240
 set brightness=100%
 no-banner
 delay 0.5
-
+skip 2
