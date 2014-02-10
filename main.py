@@ -26,9 +26,9 @@ def goGoPaparazzo():
     timestamp = datetime.now().strftime("%Y-%m-%d--%H-%M-%S")
 
     hour = datetime.now().hour
-    if hour < 8 or hour > 17:
-        print "Yawn, I'm asleep. Wake me up when it's daytime"
-        return
+    #if hour < 8 or hour > 17:
+    #    print "Yawn, I'm asleep. Wake me up when it's daytime"
+    #    return
     
     print "Activating Paparazzo at", timestamp
     
