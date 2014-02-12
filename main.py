@@ -35,7 +35,7 @@ def goGoPaparazzo():
     grammar = Grammar.from_file("grammar.txt")
     while True:
         message = grammar.generate()
-        if len(message) < 140:
+        if len(message) < 120: # twitter API actually doesn't let you post the full 140?
             break
     print "Message:", message
     
