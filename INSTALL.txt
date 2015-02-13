@@ -19,6 +19,9 @@
 
 # AUTHORISE TWITTER
 #
+# For this step you'll need the Python 'twitter' library, which we don't use for posting tweets
+# just for obtaining an OAuth key.
+> pip install twitter
 > twitter set foo
 # ^ this leads you through the OAuth dance in your browser
 > cat ~/.twitter_oauth
