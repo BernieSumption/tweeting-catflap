@@ -35,7 +35,7 @@ def goGoPaparazzo():
     grammar = Grammar.from_file("grammar.txt")
     while True:
         message = grammar.generate()
-        if len(message) < 112: # allow space for picture URL
+        if len(message) < 252: # allow space for picture URL
             break
     print "Message:", message
     
